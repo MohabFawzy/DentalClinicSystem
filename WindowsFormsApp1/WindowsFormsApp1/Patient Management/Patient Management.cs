@@ -1,0 +1,223 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WindowsFormsApp1.dentist_info;
+using static WindowsFormsApp1.MyPatient;
+
+namespace WindowsFormsApp1.Patient_Management
+{
+    public partial class Add_Patient : Form
+    {
+      
+        public Add_Patient()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Appointments appointments = new Appointments();
+            appointments.Show(this);
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Add_Patient add = new Add_Patient();
+            add.Show(this);
+            this.Hide();
+        }
+
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Payments.Payments payments = new Payments.Payments();
+            payments.Show(this);
+            this.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Medical_History.Medical_History mdhistory = new Medical_History.Medical_History();
+            mdhistory.Show(this);
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Dental_History.Dental_History dnhistory = new Dental_History.Dental_History();
+            dnhistory.Show(this);
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            X_Rays.X_Rays xrays = new X_Rays.X_Rays();
+            xrays.Show(this);
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Dentist_Info dentistInfo = new Dentist_Info();
+            dentistInfo.Show(this);
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            string query = "insert into patientTB1   values('"  + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + comboBox1.SelectedItem.ToString() + "','" + textBox4.Text + "')";
+            MyPatient Pat = new MyPatient();
+            try
+            {
+                Pat.AddPatient(query);
+                MessageBox.Show("Patient Successfully Added");
+                populate();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void populate()
+        {
+            MyPatient Pat = new MyPatient();
+            String query = "Select * from patientTB1";
+            DataSet ds = Pat.ShowPatient(query);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+        private void Add_Patient_Load(object sender, EventArgs e)
+        {
+            populate();
+        }
+
+        int key = 0;
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                textBox3.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                comboBox1.SelectedItem = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+                textBox4.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+
+                if (textBox1.Text=="")
+                {
+                    key = 0;
+                }
+                else
+                {
+                    key = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                }
+            }
+            else
+            {
+             
+                key = 0;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                string sqlquery;
+                ConnectionString MyConnection = new ConnectionString();
+                SqlConnection Con = MyConnection.GetCon();
+                Con.Open();
+                int rowID = int.Parse(dataGridView1[0, selectedIndex].Value.ToString());
+                sqlquery = "DELETE FROM patientTB1 WHERE patientID = @patientID";
+                MessageBox.Show("Deleted Successfully");
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(sqlquery, Con);
+                    cmd.Parameters.AddWithValue("@patientID", rowID);
+                    cmd.ExecuteNonQuery();
+                    string CmdString = "SELECT * FROM patientTB1";
+                    SqlDataAdapter sda = new SqlDataAdapter(CmdString, Con);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    dataGridView1.DataSource = ds.Tables[0].DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(textBox5.Text))
+            {
+                // Start building the query
+                string query = "UPDATE patientTB1 SET ";
+                List<string> updateFields = new List<string>();
+
+                // Check if each field has a value and add it to the update query
+                if (!string.IsNullOrEmpty(textBox1.Text)) // Update patientName if it's not empty
+                    updateFields.Add("patientName = @patientName");
+                if (!string.IsNullOrEmpty(textBox2.Text)) // Update patientPhone if it's not empty
+                    updateFields.Add("patientPhone = @patientPhone");
+                if (!string.IsNullOrEmpty(textBox3.Text)) // Update patientAge if it's not empty
+                    updateFields.Add("patientAge = @patientAge");
+                if (comboBox1.SelectedItem != null) // Update patientGender if it's not empty
+                    updateFields.Add("patientGender = @patientGender");
+                if (!string.IsNullOrEmpty(textBox4.Text)) // Update patientAddress if it's not empty
+                    updateFields.Add("patientAddress = @patientAddress");
+
+                // Combine all update fields into the query
+                query += string.Join(", ", updateFields);
+
+                // Add the WHERE clause
+                query += " WHERE patientID = @patientID";
+
+                try
+                {
+                    // Assign parameter values
+                    string patientName = textBox1.Text;
+                    string patientPhone = textBox2.Text; // Assuming phone number is entered in textBox2
+                    string patientAge = textBox3.Text; // Assuming age is entered in textBox3
+                    string patientGender = comboBox1.SelectedItem?.ToString(); // Handle null selected item
+                    string patientAddress = textBox4.Text;
+                    int patientID = Convert.ToInt32(textBox5.Text);
+
+                    // Create an instance of PatientDatabaseHelper class
+                    PatientDatabaseHelper dbHelper = new PatientDatabaseHelper();
+
+                    // Call the UpdatePatient method through the instance
+                    dbHelper.UpdatePatient(query, patientName, patientPhone, patientAge, patientGender, patientAddress, patientID);
+
+                    MessageBox.Show("Patient Successfully Updated");
+                    populate(); // Assuming this method populates your UI with updated data
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a Patient's ID to update.");
+            }
+
+
+
+
+        }
+    }
+}

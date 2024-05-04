@@ -1,0 +1,20 @@
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Release\WindowsFormsApp1.exe.config
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Release\WindowsFormsApp1.exe
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Release\WindowsFormsApp1.pdb
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\Dental Clinic.csproj.AssemblyReference.cache
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Appointments.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Dental_History.Dental_History.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.dentist_info.Dentist_Info.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Log_In_Form.LogIn.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Log_In_Form.Menu.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Medical_History.Medical_History.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Patient_Management.Add_Patient.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Patient_Management.List.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Patient_Management.Search.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Payments.Payments.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Properties.Resources.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.X_Rays.X_Rays.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\Dental Clinic.csproj.GenerateResource.cache
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\Dental Clinic.csproj.CoreCompileInputs.cache
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.exe
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.pdb

@@ -1,0 +1,11 @@
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Appointments.csproj.AssemblyReference.cache
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Appointments.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Appointments.csproj.GenerateResource.cache
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Appointments.csproj.CoreCompileInputs.cache
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Medical_History.Form1.resources
