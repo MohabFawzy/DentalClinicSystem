@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.Log_In_Form
             InitializeComponent();
         }
 
+        // Start Of Navigation Bar
         private void label22_Click(object sender, EventArgs e)
         {
             Appointments appointments = new Appointments();
@@ -69,11 +70,21 @@ namespace WindowsFormsApp1.Log_In_Form
             this.Hide();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            LogIn logIn = new LogIn();
+            logIn.Show(this);
+            this.Hide();
+        }
+        // End Of Navigation Bar
+
+        // Miss Click
         private void Menu_Load(object sender, EventArgs e)
         {
 
         }
-
-
     }
+    
+
+      
 }

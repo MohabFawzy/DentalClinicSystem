@@ -118,6 +118,12 @@
     <Compile Include="Log In Form\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Log In Form\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log In Form\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medical_History\Medical_History.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +132,13 @@
     </Compile>
     <Compile Include="MyAppoinments.cs" />
     <Compile Include="MyDentalHistory.cs" />
+    <Compile Include="MyDentistInfo.cs" />
+    <Compile Include="MyEmployees.cs" />
+    <Compile Include="MyLogin.cs" />
+    <Compile Include="MyMedicalHistory.cs" />
     <Compile Include="MyPatient.cs" />
+    <Compile Include="MyPayments.cs" />
+    <Compile Include="MyXRay.cs" />
     <Compile Include="Patient Management\Patient Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Log In Form\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log In Form\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medical_History\Medical_History.resx">
       <DependentUpon>Medical_History.cs</DependentUpon>
@@ -199,5 +214,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

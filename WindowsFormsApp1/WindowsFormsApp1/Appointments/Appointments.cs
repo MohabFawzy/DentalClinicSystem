@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.dentist_info;
+using WindowsFormsApp1.Log_In_Form;
 using WindowsFormsApp1.Patient_Management;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static WindowsFormsApp1.MyAppoinments;
@@ -20,10 +21,10 @@ namespace WindowsFormsApp1
         public Appointments()
         {
             InitializeComponent();
-
         }
-        ConnectionString MyCon = new ConnectionString();
 
+        // Make The ComboBox Get Data From Row patientName In patientTB1
+        ConnectionString MyCon = new ConnectionString();
         public void Fillpatient() 
         {
             SqlConnection Con = MyCon.GetCon();
@@ -38,18 +39,28 @@ namespace WindowsFormsApp1
             comboBox1.DataSource = dt;
             Con.Close();
         }
+        //
+
+        // Show the Data On the DataGridView
+        void populate()
+        {
+            MyAppoinments Pat = new MyAppoinments();
+            String query = "Select * from AppointmentTB2";
+            DataSet ds = Pat.ShowAppoinment(query);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+        //
+
+        // Shows Data When The Form Is Opened ( Loaded )
         private void Appointments_Load(object sender, EventArgs e)
         {
             Fillpatient();
             populate();
 
         }
+        //
        
-        private void button2_Click(object sender, EventArgs e)
-        {
- 
-        }
-
+        // Start Of Navigation Bar
         private void label13_Click(object sender, EventArgs e)
         {
             Appointments appointments = new Appointments();
@@ -99,82 +110,26 @@ namespace WindowsFormsApp1
             this.Hide();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void label15_Click(object sender, EventArgs e)
         {
-
+            LogIn logIn = new LogIn();
+            logIn.Show(this);
+            this.Hide();
         }
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-
-            string searchText = comboBox1.Text.ToLower();
+        // End Of Navigation Bar
 
 
-            comboBox1.Items.Clear();
 
 
-            DataTable dt = GetDataFromAppointmentTB2();
 
-
-            foreach (DataRow row in dt.Rows)
-            {
-                string itemName = row["patientName"].ToString(); 
-
-
-                if (itemName.ToLower().Contains(searchText))
-                {
-                    comboBox1.Items.Add(itemName);
-                }
-            }
-
-
-            comboBox1.DroppedDown = true;
-        }
-
-        private DataTable GetDataFromAppointmentTB2()
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-
-                using (SqlConnection con = MyCon.GetCon())
-                {
-                    con.Open();
-                    string query = "SELECT patientName FROM AppointmentTB2";
-
-                    // Execute SQL query
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        SqlDataReader rdr = cmd.ExecuteReader();
-                        dt.Load(rdr);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            return dt;
-        }
-
-
-        void populate()
-        {
-            MyPatient Pat = new MyPatient();
-            String query = "Select * from AppointmentTB2";
-            DataSet ds = Pat.ShowPatient(query);
-            dataGridView1.DataSource = ds.Tables[0];
-         
-
-
-        }
-
+        // Start Of Insertion
         private void button1_Click(object sender, EventArgs e)
         {
             string query = "insert into AppointmentTB2  values('" + comboBox1.SelectedValue.ToString() + "','" + dateTimePicker1.Value.Date + "','" + dateTimePicker2.Value.Date + "','" + dateTimePicker3.Value.TimeOfDay + "')";
-            MyPatient Pat = new MyPatient();
+            MyAppoinments Pat = new MyAppoinments();
             try
             {
-                Pat.AddPatient(query);
+                Pat.AddAppoinment(query);
                 MessageBox.Show("Appointment Successfully Added");
                 populate();
             }
@@ -184,32 +139,8 @@ namespace WindowsFormsApp1
             }
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // End Of Insertion
+        // Start Of Delete
         private void button4_Click_1(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex != -1)
@@ -250,9 +181,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Please select a patient");
             }
         }
+        // End Of Delete
 
 
-   
+        // Start Of Update
         private void button3_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(comboBox1.SelectedValue.ToString()))
@@ -281,11 +213,10 @@ namespace WindowsFormsApp1
                 try { 
                     // Assign parameter values
                     string patientName = comboBox1.SelectedValue.ToString();                 
-                    // Get current date and time
-                    DateTime todayDate = dateTimePicker1.Value.Date;
-                    DateTime sessionDate = dateTimePicker2.Value.Date;
-                    string sessionTime = dateTimePicker3.Value.ToString();
-                    
+                    DateTime todayDate = dateTimePicker1.Value.Date; 
+                    DateTime sessionDate = dateTimePicker2.Value.Date; 
+                    string sessionTime = dateTimePicker3.Value.ToString(); 
+
 
                     // Create an instance of AppointmentHelper class
                     AppDatabaseHelper appHelper = new AppDatabaseHelper();
@@ -294,15 +225,35 @@ namespace WindowsFormsApp1
                     appHelper.UpdateAppointment(query, patientName, todayDate, sessionDate, sessionTime);
 
                     MessageBox.Show("Appointment Successfully Updated");
-                    populate();  // Assuming this method populates your UI with updated data
+                    populate();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }                                                                   
-            
+            }
+            // END Of Update
 
         }
+        // Miss Click
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        // Miss Click
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Miss Click
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
     }
+
+
+
 }

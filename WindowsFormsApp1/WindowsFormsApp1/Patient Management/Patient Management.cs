@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.dentist_info;
+using WindowsFormsApp1.Log_In_Form;
 using static WindowsFormsApp1.MyPatient;
 
 namespace WindowsFormsApp1.Patient_Management
@@ -21,6 +22,25 @@ namespace WindowsFormsApp1.Patient_Management
             InitializeComponent();
         }
 
+        // Show the Data On the DataGridView
+        void populate()
+        {
+            MyPatient Pat = new MyPatient();
+            String query = "Select * from patientTB1";
+            DataSet ds = Pat.ShowPatient(query);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+        //
+        // Shows Data When The Form Is Opened ( Loaded )
+        private void Add_Patient_Load(object sender, EventArgs e)
+        {
+            populate();
+        }
+        //
+
+
+
+        // Start Of Navigation Bar
         private void label2_Click(object sender, EventArgs e)
         {
             Appointments appointments = new Appointments();
@@ -71,6 +91,15 @@ namespace WindowsFormsApp1.Patient_Management
             this.Hide();
         }
 
+        private void label18_Click(object sender, EventArgs e)
+        {
+            LogIn logIn = new LogIn();
+            logIn.Show(this);
+            this.Hide();
+        }
+        //End Of Navigation Bar
+
+        // Start on Insertion
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -80,26 +109,17 @@ namespace WindowsFormsApp1.Patient_Management
             {
                 Pat.AddPatient(query);
                 MessageBox.Show("Patient Successfully Added");
-                populate();
+                populate(); 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        // End on Insertion 
 
-        void populate()
-        {
-            MyPatient Pat = new MyPatient();
-            String query = "Select * from patientTB1";
-            DataSet ds = Pat.ShowPatient(query);
-            dataGridView1.DataSource = ds.Tables[0];
-        }
-        private void Add_Patient_Load(object sender, EventArgs e)
-        {
-            populate();
-        }
 
+        // Retrieve data from the selected row's cells and assigns them to Form Elements
         int key = 0;
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,7 +131,7 @@ namespace WindowsFormsApp1.Patient_Management
                 comboBox1.SelectedItem = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
                 textBox4.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
 
-                if (textBox1.Text=="")
+                if (textBox1.Text == "")
                 {
                     key = 0;
                 }
@@ -122,10 +142,13 @@ namespace WindowsFormsApp1.Patient_Management
             }
             else
             {
-             
+
                 key = 0;
             }
         }
+        //
+
+        // Start Of Delete
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -158,7 +181,8 @@ namespace WindowsFormsApp1.Patient_Management
             }
 
         }
-
+        // End Of Delete
+        // Start Of Update
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -214,10 +238,12 @@ namespace WindowsFormsApp1.Patient_Management
             {
                 MessageBox.Show("Please enter a Patient's ID to update.");
             }
-
+            // End Of Update
 
 
 
         }
+
+       
     }
 }

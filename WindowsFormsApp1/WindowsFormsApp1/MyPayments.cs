@@ -5,14 +5,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
-using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    internal class MyAppoinments
+    internal class MyPayments
     {
-        public void AddAppoinment(string query)
+
+
+
+        public void AddPayments(string query)
         {
             ConnectionString MyConnection = new ConnectionString();
             SqlConnection Con = MyConnection.GetCon();
@@ -24,7 +25,7 @@ namespace WindowsFormsApp1
             Con.Close();
 
         }
-        public void DeleteAppoinment(string query)
+        public void DeletePayments(string query)
         {
             ConnectionString MyConnection = new ConnectionString();
             SqlConnection Con = MyConnection.GetCon();
@@ -35,9 +36,9 @@ namespace WindowsFormsApp1
             cmd.ExecuteNonQuery();
             Con.Close();
         }
-        public class AppDatabaseHelper
+        public class PayDatabaseHelper
         {
-            public void UpdateAppointment(string query, string patientName, DateTime todayDate, DateTime sessionDate, string sessionTime)
+            public void UpdatePayments(string query, string patientName, int Total_cost, int paid, int rest, DateTime Date_of_payment)
             {
                 ConnectionString MyConnection = new ConnectionString();
                 using (SqlConnection Con = MyConnection.GetCon())
@@ -45,9 +46,10 @@ namespace WindowsFormsApp1
                     using (SqlCommand cmd = new SqlCommand(query, Con))
                     {
                         cmd.Parameters.AddWithValue("@patientName", patientName);
-                        cmd.Parameters.AddWithValue("@todayDate", todayDate);
-                        cmd.Parameters.AddWithValue("@sessionDate", sessionDate);
-                        cmd.Parameters.AddWithValue("@sessionTime", sessionTime);
+                        cmd.Parameters.AddWithValue("@Total_cost", Total_cost);
+                        cmd.Parameters.AddWithValue("@paid", paid);
+                        cmd.Parameters.AddWithValue("@rest", rest);
+                        cmd.Parameters.AddWithValue("@Date_of_payment", Date_of_payment);
 
                         Con.Open();
                         cmd.ExecuteNonQuery();
@@ -57,7 +59,7 @@ namespace WindowsFormsApp1
 
 
         }
-        public DataSet ShowAppoinment(string query)
+        public DataSet ShowPayments(string query)
         {
             ConnectionString MyConnection = new ConnectionString();
             SqlConnection Con = MyConnection.GetCon();

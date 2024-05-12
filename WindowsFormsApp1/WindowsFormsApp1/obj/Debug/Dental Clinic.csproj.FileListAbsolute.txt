@@ -16,3 +16,4 @@ D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Dental Clini
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Log_In_Form.Register.resources

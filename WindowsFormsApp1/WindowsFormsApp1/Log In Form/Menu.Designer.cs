@@ -41,6 +41,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,6 +50,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(72)))), ((int)(((byte)(99)))));
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label17);
@@ -59,10 +61,10 @@
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(1, -1);
+            this.panel3.Location = new System.Drawing.Point(-8, -1);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(269, 756);
+            this.panel3.Size = new System.Drawing.Size(278, 756);
             this.panel3.TabIndex = 47;
             // 
             // label15
@@ -71,7 +73,7 @@
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(3, 345);
+            this.label15.Location = new System.Drawing.Point(11, 344);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(83, 26);
             this.label15.TabIndex = 16;
@@ -84,7 +86,7 @@
             this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(3, 206);
+            this.label16.Location = new System.Drawing.Point(11, 205);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(110, 26);
             this.label16.TabIndex = 15;
@@ -97,7 +99,7 @@
             this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(3, 296);
+            this.label17.Location = new System.Drawing.Point(11, 295);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(149, 26);
             this.label17.TabIndex = 14;
@@ -110,7 +112,7 @@
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(3, 162);
+            this.label18.Location = new System.Drawing.Point(11, 161);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(213, 26);
             this.label18.TabIndex = 13;
@@ -123,7 +125,7 @@
             this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(3, 391);
+            this.label19.Location = new System.Drawing.Point(11, 390);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(122, 26);
             this.label19.TabIndex = 12;
@@ -136,7 +138,7 @@
             this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(3, 251);
+            this.label20.Location = new System.Drawing.Point(11, 250);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(161, 26);
             this.label20.TabIndex = 11;
@@ -148,7 +150,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(69, 48);
+            this.label21.Location = new System.Drawing.Point(77, 47);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 17);
             this.label21.TabIndex = 4;
@@ -160,7 +162,7 @@
             this.label22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(3, 116);
+            this.label22.Location = new System.Drawing.Point(11, 115);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(146, 26);
             this.label22.TabIndex = 3;
@@ -172,7 +174,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(67, 15);
+            this.label23.Location = new System.Drawing.Point(75, 14);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(135, 26);
             this.label23.TabIndex = 2;
@@ -182,7 +184,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(8, -1);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(69, 75);
@@ -200,6 +202,19 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 48;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(83, 718);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 26);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Log Out";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Menu
             // 
@@ -237,5 +252,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

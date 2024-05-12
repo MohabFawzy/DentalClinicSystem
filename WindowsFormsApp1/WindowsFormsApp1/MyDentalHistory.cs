@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     internal class MyDentalHistory
     {
-        public void AddPatient(string query)
+        public void AddDentalHistory(string query)
         {
             ConnectionString MyConnection = new ConnectionString();
             SqlConnection Con = MyConnection.GetCon();
@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             Con.Close();
 
         }
-        public void DeletePatient(string query)
+        public void DeleteDentalHistory(string query)
         {
             ConnectionString MyConnection = new ConnectionString();
             SqlConnection Con = MyConnection.GetCon();
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
         }
 
 
-        public DataSet ShowPatient(string query)
+        public DataSet ShowDentalHistory(string query)
         {
             ConnectionString MyConnection = new ConnectionString();
             SqlConnection Con = MyConnection.GetCon();

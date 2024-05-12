@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\Dental Clinc Project\\WindowsFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|d:\\dental clinc project\\windowsformsapp1\\windowsformsapp1\\dental history\\dental_history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\dental history\\dental_history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|d:\\dental clinc project\\windowsformsapp1\\windowsformsapp1\\patient management\\patient management.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\patient management\\patient management.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|D:\\Dental Clinc Project\\WindowsFormsApp1\\windowsformsapp1\\dental history\\dental_history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\dental history\\dental_history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|d:\\dental clinc project\\windowsformsapp1\\windowsformsapp1\\patient management\\patient management.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\patient management\\patient management.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|d:\\dental clinc project\\windowsformsapp1\\windowsformsapp1\\log in form\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\log in form\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|d:\\dental clinc project\\windowsformsapp1\\windowsformsapp1\\log in form\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\log in form\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|D:\\Dental Clinc Project\\WindowsFormsApp1\\windowsformsapp1\\log in form\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\log in form\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|D:\\Dental Clinc Project\\WindowsFormsApp1\\windowsformsapp1\\log in form\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FD839AA2-0FFD-4D29-ADB1-903800E97AE7}|WindowsFormsApp1\\Dental Clinic.csproj|solutionrelative:windowsformsapp1\\log in form\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +39,75 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dental_History.cs",
-              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Dental History\\Dental_History.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Dental History\\Dental_History.cs",
-              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Dental History\\Dental_History.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Dental History\\Dental_History.cs",
-              "ViewState": "AQIAALQAAAAAAAAAAAAUwMoAAAA6AAAA",
+              "Title": "Patient Management.cs",
+              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Patient Management\\Patient Management.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Patient Management\\Patient Management.cs",
+              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Patient Management\\Patient Management.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Patient Management\\Patient Management.cs",
+              "ViewState": "AQIAANAAAAAADQAAAEAhwPYAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T14:32:38.279Z",
+              "WhenOpened": "2024-05-09T18:17:25.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dental_History.cs [Design]",
-              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Dental History\\Dental_History.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Dental History\\Dental_History.cs",
-              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Dental History\\Dental_History.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\Dental History\\Dental_History.cs [Design]",
+              "Title": "Patient Management.cs [Design]",
+              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Patient Management\\Patient Management.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Patient Management\\Patient Management.cs",
+              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Patient Management\\Patient Management.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Patient Management\\Patient Management.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T01:17:29.839Z",
+              "WhenOpened": "2024-05-09T18:17:24.109Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\Menu.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Log In Form\\Menu.cs",
+              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\Menu.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Log In Form\\Menu.cs",
+              "ViewState": "AQIAABAAAADAzczMzMwgwBQAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T18:16:35.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.cs [Design]",
+              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\Menu.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Log In Form\\Menu.cs",
+              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\Menu.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Log In Form\\Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:31:43.279Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogIn.cs",
+              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\LogIn.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Log In Form\\LogIn.cs",
+              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\LogIn.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Log In Form\\LogIn.cs",
+              "ViewState": "AQIAAB8AAAAAv8zMzMwewCMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T08:20:57.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogIn.cs [Design]",
+              "DocumentMoniker": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\LogIn.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Log In Form\\LogIn.cs",
+              "ToolTip": "D:\\Dental Clinc Project\\WindowsFormsApp1\\WindowsFormsApp1\\Log In Form\\LogIn.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Log In Form\\LogIn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T06:57:09.755Z"
             }
           ]
         }

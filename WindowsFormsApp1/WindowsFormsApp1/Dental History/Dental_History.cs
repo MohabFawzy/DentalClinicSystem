@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.dentist_info;
+using WindowsFormsApp1.Log_In_Form;
 using WindowsFormsApp1.Patient_Management;
 using static WindowsFormsApp1.MyDentalHistory;
 
@@ -21,8 +22,10 @@ namespace WindowsFormsApp1.Dental_History
         {
             InitializeComponent();
         }
+
+        // Make ComboBox Get Data From Row patientName In patientTB1
         ConnectionString MyCon = new ConnectionString();
-        public void Fillpatient()
+        public void FillDentalHistory()
         {
             SqlConnection Con = MyCon.GetCon();
             Con.Open();
@@ -36,11 +39,12 @@ namespace WindowsFormsApp1.Dental_History
             comboBox1.DataSource = dt;
             Con.Close();
         }
+        // Start OF ComboBox Data
         private void Dental_History_Load(object sender, EventArgs e)
         {
-            Fillpatient();
+            FillDentalHistory();      //  ComboBox Data
         }
-
+        // Start OF Nav Bar
         private void label22_Click(object sender, EventArgs e)
         {
             Appointments appointments = new Appointments();
@@ -90,61 +94,16 @@ namespace WindowsFormsApp1.Dental_History
             this.Hide();
         }
 
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-
-            string searchText = comboBox1.Text.ToLower();
-
-
-            comboBox1.Items.Clear();
-
-
-            DataTable dt = GetDataFromAppointmentTB2();
-
-
-            foreach (DataRow row in dt.Rows)
-            {
-                string itemName = row["patientName"].ToString();
-
-
-                if (itemName.ToLower().Contains(searchText))
-                {
-                    comboBox1.Items.Add(itemName);
-                }
-            }
-
-
-            comboBox1.DroppedDown = true;
+            LogIn logIn = new LogIn();
+            logIn.Show(this);
+            this.Hide();
         }
-
-        private DataTable GetDataFromAppointmentTB2()
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-
-                using (SqlConnection con = MyCon.GetCon())
-                {
-                    con.Open();
-                    string query = "SELECT patientName FROM dentalhistoryTB8";
-
-                    // Execute SQL query
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        SqlDataReader rdr = cmd.ExecuteReader();
-                        dt.Load(rdr);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            return dt;
-        }
+        // End OF Nav Bar
 
 
+        // Start Of Insertion
         private void button1_Click(object sender, EventArgs e)
         {
             // Construct the parameterized query with column names specified
@@ -184,11 +143,11 @@ namespace WindowsFormsApp1.Dental_History
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        // END Of Insertion
 
 
 
-
-
+        // Start Of Update
         private void button3_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(comboBox1.SelectedValue.ToString()))
@@ -197,7 +156,7 @@ namespace WindowsFormsApp1.Dental_History
                 string query = "UPDATE dentalhistoryTB8 SET ";
                 List<string> updateFields = new List<string>();
 
-                // Check if each field has a value and add it to the update query
+
                 if (comboBox1.SelectedValue != null && !string.IsNullOrEmpty(comboBox1.SelectedValue.ToString())) // Update patientName if it's not empty
                     updateFields.Add("patientName = @patientName");
                 if (!string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox1.Text)) 
@@ -234,11 +193,6 @@ namespace WindowsFormsApp1.Dental_History
                 try
                 {
                     // Assign parameter values
-
-
-
-
-
                     string patientName = comboBox1.SelectedValue.ToString();
                     string frecuancy_of_dental_vists = textBox1.Text;
                     string frecuancy_of_dental_proohylaxis = textBox2.Text;
@@ -252,9 +206,7 @@ namespace WindowsFormsApp1.Dental_History
                     string complications_of_previous_dental_treatment = textBox10.Text;
                     string radiation_therapy_for_oral_and_facial_structures = textBox11.Text;
 
-                    
-
-                    // Create an instance of PatientDatabaseHelper class
+                    // Create an instance of DHDatabaseHelper class
                     DHDatabaseHelper dhdbHelper = new DHDatabaseHelper();
 
                     // Call the UpdatePatient method through the instance
@@ -263,7 +215,6 @@ namespace WindowsFormsApp1.Dental_History
                         surgical_proceduars, complications_of_previous_dental_treatment, radiation_therapy_for_oral_and_facial_structures);
 
                     MessageBox.Show("Dental History Successfully Updated");
-                    //populate(); // Assuming this method populates your UI with updated data
                 }
                 catch (Exception ex)
                 {
@@ -277,10 +228,14 @@ namespace WindowsFormsApp1.Dental_History
 
 
         }
+        // End Of Update
 
+        //Miss Click
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }
