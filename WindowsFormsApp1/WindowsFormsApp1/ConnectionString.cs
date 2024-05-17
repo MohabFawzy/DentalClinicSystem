@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
         public SqlConnection GetCon()
         {
             SqlConnection Con = new SqlConnection();
-            Con.ConnectionString = @"Data Source=DESKTOP-G2OOBQ7;Initial Catalog=DentalDb;Integrated Security=True;Encrypt=False";
+            Con.ConnectionString = @"";
             return Con;
         }
     }
