@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.dentist_info;
+using WindowsFormsApp1.Appointments;
 using WindowsFormsApp1.Log_In_Form;
+using WindowsFormsApp1.Payments;
 using static WindowsFormsApp1.MyPatient;
 
 namespace WindowsFormsApp1.Patient_Management
 {
-    public partial class Add_Patient : Form
+    public partial class AssistantPM : Form
     {
-      
-        public Add_Patient()
+        public AssistantPM()
         {
             InitializeComponent();
         }
@@ -32,96 +32,59 @@ namespace WindowsFormsApp1.Patient_Management
         }
         //
         // Shows Data When The Form Is Opened ( Loaded )
-        private void Add_Patient_Load(object sender, EventArgs e)
+        private void AssistantPM_Load(object sender, EventArgs e)
         {
             populate();
         }
         //
 
-
-
-        // Start Of Navigation Bar
-        private void label2_Click(object sender, EventArgs e)
-        {
-            DocAppointments appointments = new DocAppointments();
-            appointments.Show(this);
-            this.Hide();
-        }
-
+        // Start Of NavBar
         private void label4_Click(object sender, EventArgs e)
         {
-            Add_Patient add = new Add_Patient();
-            add.Show(this);
+            AssistantPM assistantPM = new AssistantPM();
+            assistantPM.Show(this);
             this.Hide();
         }
 
-
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AssistantApp assistantApp = new AssistantApp();
+            assistantApp.Show(this);
+            this.Hide();
+        }
         private void label7_Click(object sender, EventArgs e)
         {
-            Payments.Payments payments = new Payments.Payments();
-            payments.Show(this);
+            AssistantPay assistantPay = new AssistantPay();
+            assistantPay.Show(this);
             this.Hide();
         }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-            Medical_History.Medical_History mdhistory = new Medical_History.Medical_History();
-            mdhistory.Show(this);
-            this.Hide();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-            Dental_History.Dental_History dnhistory = new Dental_History.Dental_History();
-            dnhistory.Show(this);
-            this.Hide();
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            X_Rays.X_Rays xrays = new X_Rays.X_Rays();
-            xrays.Show(this);
-            this.Hide();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            Dentist_Info dentistInfo = new Dentist_Info();
-            dentistInfo.Show(this);
-            this.Hide();
-        }
-
         private void label18_Click(object sender, EventArgs e)
         {
             LogIn logIn = new LogIn();
             logIn.Show(this);
             this.Hide();
         }
-        //End Of Navigation Bar
+        // End Of NavBar
 
-        // Start on Insertion
+        // start Of Insertion
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string query = "insert into patientTB1   values('"  + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + comboBox1.SelectedItem.ToString() + "','" + textBox4.Text + "')";
+            string query = "insert into patientTB1   values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + comboBox1.SelectedItem.ToString() + "','" + textBox4.Text + "')";
             MyPatient Pat = new MyPatient();
             try
             {
                 Pat.AddPatient(query);
                 MessageBox.Show("Patient Successfully Added");
-                populate(); 
+                populate();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        // End on Insertion 
-
-
-        // Retrieve data from the selected row's cells and assigns them to Form Elements
+        // End Of Insertion
         int key = 0;
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -146,46 +109,11 @@ namespace WindowsFormsApp1.Patient_Management
                 key = 0;
             }
         }
-        //
-
-        // Start Of Delete
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                int selectedIndex = dataGridView1.SelectedRows[0].Index;
-                string sqlquery;
-                ConnectionString MyConnection = new ConnectionString();
-                SqlConnection Con = MyConnection.GetCon();
-                Con.Open();
-                int rowID = int.Parse(dataGridView1[0, selectedIndex].Value.ToString());
-                sqlquery = "DELETE FROM patientTB1 WHERE patientID = @patientID";
-                MessageBox.Show("Deleted Successfully");
-
-                try
-                {
-                    SqlCommand cmd = new SqlCommand(sqlquery, Con);
-                    cmd.Parameters.AddWithValue("@patientID", rowID);
-                    cmd.ExecuteNonQuery();
-                    string CmdString = "SELECT * FROM patientTB1";
-                    SqlDataAdapter sda = new SqlDataAdapter(CmdString, Con);
-                    DataSet ds = new DataSet();
-                    sda.Fill(ds);
-                    dataGridView1.DataSource = ds.Tables[0].DefaultView;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-
-        }
         // End Of Delete
+
         // Start Of Update
         private void button3_Click(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrEmpty(textBox5.Text))
             {
                 // Start building the query
@@ -239,11 +167,7 @@ namespace WindowsFormsApp1.Patient_Management
                 MessageBox.Show("Please enter a Patient's ID to update.");
             }
             // End Of Update
-
-
-
         }
 
-       
     }
 }

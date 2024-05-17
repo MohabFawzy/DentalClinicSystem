@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Log_In_Form
         // Start Of Navigation Bar
         private void label22_Click(object sender, EventArgs e)
         {
-            Appointments appointments = new Appointments();
+            DocAppointments appointments = new DocAppointments();
             appointments.Show(this);
             this.Hide();
         }
@@ -80,6 +80,31 @@ namespace WindowsFormsApp1.Log_In_Form
 
         // Miss Click
         private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

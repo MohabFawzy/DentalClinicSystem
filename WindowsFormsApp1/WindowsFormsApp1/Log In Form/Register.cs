@@ -24,7 +24,8 @@ namespace WindowsFormsApp1.Log_In_Form
         private void Register_Load(object sender, EventArgs e)
         {
             checkBox1_CheckedChanged(sender, e);
-            
+            checkBox2_CheckedChanged(sender, e);
+
         }
 
 
@@ -75,32 +76,40 @@ namespace WindowsFormsApp1.Log_In_Form
 
             if (comboBox1.SelectedItem.ToString() == "Doctor")
             {
-                string query = "insert into EmployeeTB10 (Title ,Doctor ,Password ) values('" + comboBox1.SelectedItem.ToString() + "','" + textBox1.Text + "','" + textBox2.Text + "')";
+                string doctorName = textBox1.Text;
+
+                string query = "INSERT INTO EmployeeTB10 (Title, Doctor, Username, Password) VALUES ('Doctor', '" + doctorName + "', '" + doctorName + "', '" + textBox2.Text + "')";
+
                 MyEmployees Pat = new MyEmployees();
                 try
                 {
                     Pat.AddEmployee(query);
-                    MessageBox.Show("Employee Successfully Added");
+                    MessageBox.Show("Doctor Successfully Added");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+
             else if (comboBox1.SelectedItem.ToString() == "Assistant")
             {
-                string query = "insert into EmployeeTB10 (Title ,Assistant ,Password ) values('" + comboBox1.SelectedItem.ToString() + "','" + textBox1.Text + "','" + textBox2.Text + "')";
+                string assistantName = textBox1.Text;
+
+                string query = "INSERT INTO EmployeeTB10 (Title, Assistant, Username, Password) VALUES ('Assistant', '" + assistantName + "', '" + assistantName + "', '" + textBox2.Text + "')";
+
                 MyEmployees Pat = new MyEmployees();
                 try
                 {
                     Pat.AddEmployee(query);
-                    MessageBox.Show("Employee Successfully Added");
+                    MessageBox.Show("Assistant Successfully Added");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+
 
         }
         // End Of Insertion

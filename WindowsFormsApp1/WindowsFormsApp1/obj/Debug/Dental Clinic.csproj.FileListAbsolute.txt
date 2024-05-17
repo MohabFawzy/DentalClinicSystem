@@ -1,7 +1,6 @@
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Dental Clinic.csproj.AssemblyReference.cache
-D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Appointments.resources
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dental_History.Dental_History.resources
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.dentist_info.Dentist_Info.resources
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Log_In_Form.LogIn.resources
@@ -17,3 +16,8 @@ D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsForms
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Log_In_Form.Register.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Log_In_Form.AssistantMenu.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DocAppointments.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Appointments.AssistantApp.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Patient_Management.AssistantPM.resources
+D:\Dental Clinc Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Payments.AssistantPay.resources

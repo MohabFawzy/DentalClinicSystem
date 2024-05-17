@@ -51,7 +51,7 @@ namespace WindowsFormsApp1.X_Rays
         // Start of Navigation Bar
         private void label22_Click(object sender, EventArgs e)
         {
-            Appointments appointments = new Appointments();
+            DocAppointments appointments = new DocAppointments();
             appointments.Show(this);
             this.Hide();
         }

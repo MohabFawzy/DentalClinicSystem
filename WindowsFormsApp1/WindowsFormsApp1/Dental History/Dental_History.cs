@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.Dental_History
         // Start OF Nav Bar
         private void label22_Click(object sender, EventArgs e)
         {
-            Appointments appointments = new Appointments();
+            DocAppointments appointments = new DocAppointments();
             appointments.Show(this);
             this.Hide();
         }

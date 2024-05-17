@@ -8,18 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.dentist_info;
+using WindowsFormsApp1.Appointments;
 using WindowsFormsApp1.Log_In_Form;
 using WindowsFormsApp1.Patient_Management;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static WindowsFormsApp1.MyAppoinments;
-using static WindowsFormsApp1.MyPayments;
 
 namespace WindowsFormsApp1.Payments
 {
-    public partial class Payments : Form
+    public partial class AssistantPay : Form
     {
-        public Payments()
+        public AssistantPay()
         {
             InitializeComponent();
         }
@@ -43,6 +40,7 @@ namespace WindowsFormsApp1.Payments
         }
         //
 
+
         // Show the Data On the DataGridView
         void populate()
         {
@@ -51,75 +49,45 @@ namespace WindowsFormsApp1.Payments
             DataSet ds = Pat.ShowPayments(query);
             dataGridView1.DataSource = ds.Tables[0];
         }
-        //
-
         // Shows Data When The Form Is Opened ( Loaded )
-        private void Payments_Load(object sender, EventArgs e)
+        private void AssistantPay_Load(object sender, EventArgs e)
         {
             FillPayments();
             populate();
         }
 
 
-        // Start Of Navigation Bar
-        private void label22_Click(object sender, EventArgs e)
+        // Start Of NavBar
+        private void label18_Click(object sender, EventArgs e)
         {
-            DocAppointments appointments = new DocAppointments();
-            appointments.Show(this);
+            AssistantPM assistantPM = new AssistantPM();
+            assistantPM.Show(this);
             this.Hide();
         }
 
-        private void label18_Click(object sender, EventArgs e)
+        private void label22_Click(object sender, EventArgs e)
         {
-            Add_Patient add = new Add_Patient();
-            add.Show(this);
+            AssistantApp assistantApp = new AssistantApp();
+            assistantApp.Show(this);
             this.Hide();
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            Payments payments = new Payments();
-            payments.Show(this);
+            AssistantPay assistantPay = new AssistantPay();
+            assistantPay.Show(this);
             this.Hide();
         }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-            Medical_History.Medical_History mdhistory = new Medical_History.Medical_History();
-            mdhistory.Show(this);
-            this.Hide();
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-            Dental_History.Dental_History dnhistory = new Dental_History.Dental_History();
-            dnhistory.Show(this);
-            this.Hide();
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-            X_Rays.X_Rays xrays = new X_Rays.X_Rays();
-            xrays.Show(this);
-            this.Hide();
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-            Dentist_Info dentistInfo = new Dentist_Info();
-            dentistInfo.Show(this);
-            this.Hide();
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             LogIn logIn = new LogIn();
             logIn.Show(this);
             this.Hide();
         }
-        // End Of Navigation Bar
+        // End Of NavBar
 
-        // Start Of Insrtion 
+
+        // Start Of Insertion
         private void button1_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(textBox1.Text, out int Total_cost))
@@ -145,7 +113,6 @@ namespace WindowsFormsApp1.Payments
             // Display the Data
             populate();
         }
-        //
 
         // Get Session Date From sessionDate Roe In AppointmentTB2
         private DateTime GetSessionDate(string patientName)
@@ -153,7 +120,7 @@ namespace WindowsFormsApp1.Payments
             DateTime sessionDate = DateTime.MinValue; // Default value if no sessionDate found
             try
             {
-              
+
                 ConnectionString connectionStringObj = new ConnectionString();
                 string connectionString = connectionStringObj.GetCon().ConnectionString;
 
@@ -210,6 +177,7 @@ namespace WindowsFormsApp1.Payments
         }
         // End Of Insrtion 
 
+
         // Start Of Update
         private void button3_Click(object sender, EventArgs e)
         {
@@ -240,7 +208,6 @@ namespace WindowsFormsApp1.Payments
                 MessageBox.Show("Please select a patient name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         // Update Data In The DataBase
         private void UpdateDataInDatabase(string patientName, int Total_cost, int paid, DateTime date_of_payment, int rest)
         {
@@ -273,7 +240,7 @@ namespace WindowsFormsApp1.Payments
         }
         // End Of Update
 
-        // Start Of Delete
+        //Start Of Delete
         private void button4_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex != -1)
@@ -313,14 +280,10 @@ namespace WindowsFormsApp1.Payments
             {
                 MessageBox.Show("Please select a patient");
             }
+            //  End Of Delete
         }
-        //  End Of Delete
 
     }
+
 }
-
-
-
-
-
 

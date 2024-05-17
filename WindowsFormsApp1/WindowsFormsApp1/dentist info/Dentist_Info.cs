@@ -62,7 +62,7 @@ namespace WindowsFormsApp1.dentist_info
         // Start Of Navigation Bar
         private void label17_Click(object sender, EventArgs e)
         {
-            Appointments appointments = new Appointments();
+            DocAppointments appointments = new DocAppointments();
             appointments.Show(this);
             this.Hide();
         }

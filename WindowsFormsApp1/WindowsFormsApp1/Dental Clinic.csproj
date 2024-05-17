@@ -87,11 +87,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointments\Appointments.cs">
+    <Compile Include="Appointments\DocAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Appointments\Appointments.Designer.cs">
-      <DependentUpon>Appointments.cs</DependentUpon>
+    <Compile Include="Appointments\DocAppointments.Designer.cs">
+      <DependentUpon>DocAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointments\AssistantApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointments\AssistantApp.Designer.cs">
+      <DependentUpon>AssistantApp.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionString.cs" />
     <Compile Include="Dental History\Dental_History.cs">
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="dentist info\Dentist_Info.Designer.cs">
       <DependentUpon>Dentist_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log In Form\AssistantMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log In Form\AssistantMenu.Designer.cs">
+      <DependentUpon>AssistantMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Log In Form\LogIn.cs">
       <SubType>Form</SubType>
@@ -139,11 +151,23 @@
     <Compile Include="MyPatient.cs" />
     <Compile Include="MyPayments.cs" />
     <Compile Include="MyXRay.cs" />
+    <Compile Include="Patient Management\AssistantPM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient Management\AssistantPM.Designer.cs">
+      <DependentUpon>AssistantPM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient Management\Patient Management.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Patient Management\Patient Management.Designer.cs">
       <DependentUpon>Patient Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\AssistantPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\AssistantPay.Designer.cs">
+      <DependentUpon>AssistantPay.cs</DependentUpon>
     </Compile>
     <Compile Include="Payments\Payments.cs">
       <SubType>Form</SubType>
@@ -159,14 +183,20 @@
     <Compile Include="X Rays\X_Rays.Designer.cs">
       <DependentUpon>X_Rays.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Appointments\Appointments.resx">
-      <DependentUpon>Appointments.cs</DependentUpon>
+    <EmbeddedResource Include="Appointments\DocAppointments.resx">
+      <DependentUpon>DocAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointments\AssistantApp.resx">
+      <DependentUpon>AssistantApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dental History\Dental_History.resx">
       <DependentUpon>Dental_History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dentist info\Dentist_Info.resx">
       <DependentUpon>Dentist_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log In Form\AssistantMenu.resx">
+      <DependentUpon>AssistantMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log In Form\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -180,8 +210,14 @@
     <EmbeddedResource Include="Medical_History\Medical_History.resx">
       <DependentUpon>Medical_History.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Patient Management\AssistantPM.resx">
+      <DependentUpon>AssistantPM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Patient Management\Patient Management.resx">
       <DependentUpon>Patient Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\AssistantPay.resx">
+      <DependentUpon>AssistantPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payments\Payments.resx">
       <DependentUpon>Payments.cs</DependentUpon>
