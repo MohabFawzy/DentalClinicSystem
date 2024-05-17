@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -83,8 +84,11 @@ namespace WindowsFormsApp1.Patient_Management
             }
         }
         // End Of Insertion
+
+
+        // Retrieve data from the selected row's cells and assigns them to Form Elements
         int key = 0;
-        private void button4_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -107,6 +111,38 @@ namespace WindowsFormsApp1.Patient_Management
             {
 
                 key = 0;
+            }
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                string sqlquery;
+                ConnectionString MyConnection = new ConnectionString();
+                SqlConnection Con = MyConnection.GetCon();
+                Con.Open();
+                int rowID = int.Parse(dataGridView1[0, selectedIndex].Value.ToString());
+                sqlquery = "DELETE FROM patientTB1 WHERE patientID = @patientID";
+                MessageBox.Show("Deleted Successfully");
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(sqlquery, Con);
+                    cmd.Parameters.AddWithValue("@patientID", rowID);
+                    cmd.ExecuteNonQuery();
+                    string CmdString = "SELECT * FROM patientTB1";
+                    SqlDataAdapter sda = new SqlDataAdapter(CmdString, Con);
+                    DataSet ds = new DataSet();
+                    sda.Fill(ds);
+                    dataGridView1.DataSource = ds.Tables[0].DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         // End Of Delete
