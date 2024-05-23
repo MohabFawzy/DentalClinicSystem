@@ -2,8 +2,7 @@
 # Dental Clinic Management System
 
 ## Overview
-The Dental Clinic Management System (DCMS) is a comprehensive software solution designed to streamline the operations of a dental clinic. Developed using C# and Microsoft SQL Server, this system manages patient records, appointment scheduling, treatment history, billing, and inventory management, among other functionalities. This project is part of a college assignment, aiming to provide students with practical experience in software development and database management.
-
+The Dental Clinic Management System (DCMS) is a comprehensive software solution designed to streamline the operations of a dental clinic. Developed using C# and Microsoft SQL Server, this system manages patient records, appointment scheduling, billing, among other functionalities. This project is part of a college assignment developed by Moaz Magdy, Mai Elmetwally, Rawan Taha, Ahmed Adel, Mahmoud Magdy, and Mohab Mohamed. The assignment aims to provide students with practical experience in software development and database management.
 
 
 
